@@ -1,2 +1,68 @@
-.nav{}
 
+/**********BOOTSTRAP OVERWRITES**************/
+p{
+    margin:0;
+}
+/********************************************/
+
+
+/*************NAVBAR FORMATTING***************/
+.navbar{
+    background-color: #4AAE4C;
+    border:none;
+    border-bottom: 1px solid #0B811E;
+    border-radius: 0;
+    -webkit-box-shadow: -1px 3px 17px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 3px 17px 1px rgba(0,0,0,0.75);
+    box-shadow: -1px 3px 17px 1px rgba(0,0,0,0.75);
+}
+.navbar a{
+    font-size: 180%;
+    font-family: Abel,sans-serif;
+}
+.nav-title img {
+    max-width:43px;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.nav-title p {
+    float: right;
+    margin-right: 2em;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 0;
+    font-size: 120%;
+}
+
+.nav-title{
+    color: #053B06;
+}
+.nav-title:hover{
+    color: #37771d;
+}
+
+/*****************************************/
+
+/***********FOOTER FORMATTING*************/
+
+footer{
+    -webkit-box-shadow: -1px 3px 17px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 3px 17px 1px rgba(0,0,0,0.75);
+    box-shadow: -1px 3px 17px 1px rgba(0,0,0,0.75);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 20px;
+    background-color: #4AAE4C;
+    border-top: 1px solid #0B811E;
+}
+
+footer iframe {
+    width: 300px;
+    height: 150px;
+    float: right;
+    border:2px solid #37771d;
+    border-radius: 3px
+}
+/*****************************************/
