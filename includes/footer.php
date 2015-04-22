@@ -52,7 +52,6 @@
         </div>
     </div>
 </div>
-</div> <!--end of container-->
 <!--javascript-->
 <!-- jquery (necessary for bootstrap's javascript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

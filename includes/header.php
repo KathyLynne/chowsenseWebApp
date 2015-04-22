@@ -37,7 +37,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="#">
+        <a href="/ChowSenseWebApp/index.php">
             <div class="nav-title">
                 <img src="images/ic_chowsenselogo.png">
                 <p><strong>Chowsense</strong></p>
@@ -48,10 +48,25 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Search</a></li>
-            <li><a href="#">My Recipes</a></li>
-            <li><a href="#">My Favorites</a></li>
-            <li><a href="#">Browse</a></li>
+
+            <?php
+            $pages = array(
+                'Search' =>'/ChowSenseWebApp/template.html',
+                'My Recipes' =>'#',
+                'My Favorites' =>'#',
+                'Browse' =>'#'
+            );
+            $this_page = $_SERVER['REQUEST_URI'];
+            foreach ($pages as $k=>$v){
+                echo '<li';
+                if ($this_page ==$v)echo ' class="active"';
+                echo '><a href="'.$v.'">'.$k.'</a></li>';
+            }
+            ?>
+<!--            <li class="active"><a href="#">Search</a></li>-->
+<!--            <li><a href="#">My Recipes</a></li>-->
+<!--            <li><a href="#">My Favorites</a></li>-->
+<!--            <li><a href="#">Browse</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Account</a></li>
@@ -59,5 +74,4 @@
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
-<div id="container">
-    <div id="body">
+<div id="body">

@@ -54,7 +54,7 @@ body{
 #body{
     padding-bottom: 400px;
 }
-#container{
+html{
     min-height:100%;
     position:relative;
 }
