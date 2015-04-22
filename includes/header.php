@@ -59,3 +59,5 @@
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
+<div id="container">
+    <div id="body">
