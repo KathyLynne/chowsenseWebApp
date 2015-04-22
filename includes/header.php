@@ -14,6 +14,7 @@
     <!--Bootstrap-->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/search.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Abel&subset=latin" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Ubuntu&subset=latin" rel="stylesheet" type="text/css">
     <!-- html5 shim and respond.js for ie8 support of html5 elements and media queries -->
