@@ -3,18 +3,20 @@
     <div class="container">
 
         <div class="row">
+            <div class="footer-links">
             <div class="col-md-4">
-                <div class="collapse navbar-collapse">
+                <div class="">
                     <ul>
                         <li class="list-head"><h4>Links</h4></li>
                         <li><a href="#">Search <span class="glyphicon glyphicon-link"></span></a></li>
                         <li><a href="#">Favorites <span class="glyphicon glyphicon-link"></span></a></li>
                         <li><a href="#">My Recipies <span class="glyphicon glyphicon-link"></span></a></li>
+                        <li><a href="#">About Us <span class="glyphicon glyphicon-link"></span></a></li><br>
                         <li><a href="#">Account <span class="glyphicon glyphicon-link"></span></a></li>
                         <li><a href="#">Logout <span class="glyphicon glyphicon-link"></span></a></li>
-                        <li><a href="#">About Us <span class="glyphicon glyphicon-link"></span></a></li>
                     </ul>
                 </div>
+            </div>
             </div>
             <div class="col-xs-12 col-md-3">
                 <p class="text-center">&copy; 2015 Chowsense, Inc.<br><a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>

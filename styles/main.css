@@ -60,13 +60,14 @@ footer{
     -webkit-box-shadow: -1px 3px 17px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 3px 17px 1px rgba(0,0,0,0.75);
     box-shadow: -1px 3px 17px 1px rgba(0,0,0,0.75);
-    bottom: 0;
     width: 100%;
     padding-top: 20px;
     background-color: #4AAE4C;
     border-top: 1px solid #0B811E;
     font-family:  Ubuntu,sans-serif;;
     padding-bottom: 20px;
+    position: absolute;
+
 }
 
 footer iframe {
@@ -77,6 +78,7 @@ footer iframe {
     vertical-align: middle;
     margin-top: 20px;
     margin-bottom: 20px;
+
 }
 
 footer a{
@@ -93,4 +95,14 @@ footer .list-head{
 footer .list-head h4{
     font-weight: bold;
 }
+
 /*****************************************/
+
+/*********SCREEN SIZE OVERRIDING**********/
+@media screen and (max-width: 991px) {
+    .footer-links {
+        display: none;
+    }
+}
+
+/****************************************/
