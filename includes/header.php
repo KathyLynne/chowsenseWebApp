@@ -14,9 +14,12 @@
     <!--Bootstrap-->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
-    <link href="styles/search.css" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Abel&subset=latin" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Ubuntu&subset=latin" rel="stylesheet" type="text/css">
+    <link rel="icon"
+          type="image/png"
+          href="images/ic_chowsenselogo.png">
+
     <!-- html5 shim and respond.js for ie8 support of html5 elements and media queries -->
     <!-- warning: respond.js doesn't work if you view the page via file:// -->
     <!--[if lt ie 9]>
@@ -52,7 +55,7 @@
 
             <?php
             $pages = array(
-                'Search' =>'/ChowSenseWebApp/template.html',
+                'Search' =>'/ChowSenseWebApp/search.php',
                 'My Recipes' =>'#',
                 'My Favorites' =>'#',
                 'Browse' =>'#'

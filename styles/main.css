@@ -134,12 +134,46 @@ html{
 /****************************************/
 
 /************SEARCH   *******************/
-.searchWrapper .searchLine{
-    align-content: center;
+
+.searchWrapper{
+    width:300px;
+    margin: 0 auto;
 }
-#ingredientList{
+.searchWrapper button{
+    background-color: transparent;
+    border: none;
+    margin-left: 15px;
+    border-radius: 80px;
+}
+.searchWrapper h3 {
+    padding: 0 auto;
+}
+
+.searchWrapper ul{
     list-style: none;
-    text-decoration: none;
+}
+
+.removeBtn:hover{
+    background-color: transparent;
+    border: none;
+
+}
+
+.removeBtn {
+    height:30px;
+    width: 50px;
+    padding: auto;
+}
+.removeBtn{
+    height:35px;
+    width: 35px;
+    margin:auto;
+    background-size: 10px 10px;
+    background: url("http://localhost:63342/ChowSenseWebApp/images/ic_menu_remove.png")no-repeat;
+
+}
+.removeBtn:hover{
+    background: url("http://localhost:63342/ChowSenseWebApp/images/ic_menu_remove_red.png")no-repeat;
 }
 
 /****************************************/
