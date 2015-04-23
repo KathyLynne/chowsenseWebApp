@@ -36,13 +36,13 @@ $(function() {
         //getIngredients($jsonString);
 
         $.ajax({
-            url: 'http://localhost:8888/ChowSenseWebApp/search.php',
+            url: 'test.php',
 
-            type: 'post',
-            //data: {ingredients: $jsonString},
-            data: {testing: 1, page: 2},
-            success: function(){
-                alert('success');
+            type: 'POST',
+            data: {ingredients: $jsonString},
+            //data: {testing: 1, page: 2},
+            success: function(data, testStatus, jqZHR){
+                alert(data);
             },
             error: function(){
                 alert('error');

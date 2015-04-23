@@ -21,11 +21,8 @@ include 'includes/header.php';
     <h1 class="searchTitle text-center">What's in the cupboards?</h1>
     <div class="callOut">
             <div class="searchWrapper">
-                <?php
-                if($_POST){
-                echo 'Posted';
-                }
-?>
+
+
 
 
                 <div class="searchLine" id="termOriginal">
@@ -37,14 +34,25 @@ include 'includes/header.php';
 
                     <button id="searchButton"  class="btn btn-default">Search</button>
                 <?php
-                if(isset($_POST)){
-                    var_dump($_POST);
-                }
+
                 if(isset($_POST["ingredients"])){
-                    $ingredients = json_decode($_POST["ingredients"]);
-                    echo var_dump($ingredients);
+                    $ingredients = $_POST["ingredients"];
+                    echo   "<p>$ingredients</p>";
                 }
                 ?>
+                <div class="list-container">
+                    <div class="row">
+                <?php
+/*
+                for ($i = 0; $i < count($results); $i++) {
+                $recipe = $results[$i];
+                $recipeID = $recipe->getObjectId();
+                include 'includes/recipeListItem.php';
+                }
+
+                */?>
+                    </div>
+                </div>
 
             </div>
 
