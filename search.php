@@ -26,7 +26,7 @@ include 'includes/header.php';
                 <h3>What's in the cupboards?</h3>
                 <div class="searchLine" id="termOriginal">
                     <ul id="ingredientList">
-                       <li> <input type='text' name='searchTerm'><button id="addTerm" class="btn btn-default"><img src="images/ic_menu_add.png"> </button></li>
+                        <li> <input type='text' name='searchTerm'><button id="addTerm" class="btn btn-default"><img src="images/ic_menu_add.png"> </button></li>
                     </ul>
 
 
