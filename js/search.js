@@ -1,6 +1,11 @@
 /**
  * Created by kate on 2015-04-22.
  */
+Parse.$ = jQuery;
+
+Parse.initialize("qJwvg8qtJEb7FnzU1ygRwgdUkGp7Bgh2oV8m2yWP", "1oh0IVVs2m57N9qov3LoW5V7O6ZqNR62YDEJvFZP");
+
+
 $(function() {
     $("#addTerm").click(function(){
 
@@ -9,28 +14,26 @@ $(function() {
     'remove </button> ' +
     '</li>').appendTo("#ingredientList").hide().fadeIn(700);
 
-});
+    });
 
 
-$(document).on("click", ".removeBtn", function() {
-    //$(this).parent().fadeOut(1000);
-    $(this).parent().fadeOut(500, function(){$(this).remove();});
-});
+    $(document).on("click", ".removeBtn", function() {
+        //$(this).parent().fadeOut(1000);
+        $(this).parent().fadeOut(500, function(){$(this).remove();});
+    });
+
+
+
+
    /* $("#addTerm").click(function(){
-
-
         $('<div id="newSearchLine"><input type="text" name="searchTerm">' +
         '<button name="addedTerm" class="btn btn-default"> ' +
         '<img src="images/ic_menu_add.png"/>  </button> ' +
         '</div>').appendTo("#termOriginal");
     });*/
-
-   // var $removeBtn = $('<button name="removeTerm" class="btn btn-default">Remove</button>'),
-
-
-/*
-
-    $("#addTerm").click(function(){
+    // var $removeBtn = $('<button name="removeTerm" class="btn btn-default">Remove</button>'),
+    /*
+     $("#addTerm").click(function(){
         $removeBtn.append(".searchLine");
     });
 */

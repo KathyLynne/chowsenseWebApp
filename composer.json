@@ -10,6 +10,6 @@
     }
   ],
   "require": {
-    "parse/php-sdk": "1.1.2"
+    "vendor/parse/php-sdk": "1.1.2"
   }
 }

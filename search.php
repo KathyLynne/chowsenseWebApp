@@ -31,6 +31,7 @@ include 'includes/header.php';
 
 
                 </div>
+                <button id="searchButton" class="btn btn-default">Search</button>
             </div>
             <!--</form>-->
 
