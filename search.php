@@ -21,15 +21,37 @@ include 'includes/header.php';
     <h1 class="searchTitle text-center">What's in the cupboards?</h1>
     <div class="callOut">
             <div class="searchWrapper">
-            <!--<form method='post' >-->
+                <?php
+                if($_POST){
+                echo 'Posted';
+                }
+?>
+
+
                 <div class="searchLine" id="termOriginal">
                     <ul id="ingredientList">
-                        <li> <input type='text' name='searchTerm'><button id="addTerm" class="addBtn"></button></li>
+                        <li> <input type='text' name='searchTerm'><button id="addTerm" class="btn btn-default"><img src="images/ic_menu_add.png"> </button></li>
                     </ul>
                 </div>
-                <button id="searchButton" class="btn btn-default">Search</button>
+
+
+                    <button id="searchButton"  class="btn btn-default">Search</button>
+                <?php
+                if(isset($_POST)){
+                    var_dump($_POST);
+                }
+                if(isset($_POST["ingredients"])){
+                    $ingredients = json_decode($_POST["ingredients"]);
+                    echo var_dump($ingredients);
+                }
+                ?>
+
             </div>
-            <!--</form>-->
+
+
+
+
+        </div>
     </div>
 </div>
 <?php include 'includes/footer.php'?>

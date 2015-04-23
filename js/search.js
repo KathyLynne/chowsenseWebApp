@@ -21,6 +21,55 @@ $(function() {
         $(this).parent().fadeOut(500, function(){$(this).remove();});
     });
 
+    $("#searchButton").click(function(){
+       var $arr = $('input[type=text]').map(function(){
+           return this.value;
+       }).get();
+
+        var $jsonString = JSON.stringify($arr);
+
+       $('<p>test: '+$jsonString+'</p>').appendTo('.searchLine');
+        //alert('click');
+        //var Ingredient = Parse.Object.extend("Ingredient");
+        //var Recipe = Parse.Object.extend("Recipe");
+        //method Below
+        //getIngredients($jsonString);
+
+        $.ajax({
+            url: 'http://localhost:8888/ChowSenseWebApp/search.php',
+
+            type: 'post',
+            //data: {ingredients: $jsonString},
+            data: {testing: 1, page: 2},
+            success: function(){
+                alert('success');
+            },
+            error: function(){
+                alert('error');
+            }
+        });
+
+    });
+
+
+});
+
+/*function getIngredients(list){
+    var query = Parse.Query("Ingredient");
+    query.containedIn("IngredientName",list);
+
+    query.find({
+        success: function(ingredients){
+            //$results = JSON.parse(ingredients);
+            alert(ingredients);
+        },
+        error: function(error){
+            alert(error);
+        }
+    });
+}*/
+
+    //query.
 
 
 
@@ -37,7 +86,7 @@ $(function() {
     });
 */
 
-});
+
 
 
 
