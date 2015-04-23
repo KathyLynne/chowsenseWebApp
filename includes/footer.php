@@ -9,7 +9,7 @@
                 <div class="">
                     <ul>
                         <li class="list-head"><h4>Links</h4></li>
-                        <li><a href="#">Search <span class="glyphicon glyphicon-link"></span></a></li>
+                        <li><a href="/ChowSenseWebApp/search.php">Search <span class="glyphicon glyphicon-link"></span></a></li>
                         <li><a href="#">Favorites <span class="glyphicon glyphicon-link"></span></a></li>
                         <li><a href="#">My Recipies <span class="glyphicon glyphicon-link"></span></a></li>
                         <li><a href="#">About Us <span class="glyphicon glyphicon-link"></span></a></li><br>
@@ -31,7 +31,7 @@
                 <div class="col-xs-4">
                     <div class="">
                         <ul>
-                            <li><a href="#">Search</a></li>
+                            <li><a href="/ChowSenseWebApp/search.php">Search</a></li>
                             <li><a href="#">Favorites</a></li>
                             <li><a href="#">My Recipies</a></li>
                             <li><a href="#">About Us</a></li>

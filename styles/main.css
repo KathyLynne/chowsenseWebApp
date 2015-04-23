@@ -48,11 +48,11 @@ p{
 /***********GENERAL FORMATTING*************/
 
 body{
-    background-color: #4AAE4C;
+    background-color: #E9EAED;
 }
 
 #body{
-    padding-bottom: 230px;
+    padding-bottom: 250px;
 }
 html{
     min-height:100%;
@@ -72,7 +72,7 @@ html{
     padding-top: 20px;
     background-color: #4AAE4C;
     border-top: 1px solid #0B811E;
-    font-family:  Ubuntu,sans-serif;;
+    font-family:  Ubuntu,sans-serif;
     padding-bottom: 20px;
     position: absolute;
     bottom: 0;
@@ -127,19 +127,103 @@ html{
         display: block;
     }
     #body{
-        padding-bottom: 400px;
+        padding-bottom: 420px;
     }
 }
 
 /****************************************/
 
 /************SEARCH   *******************/
-.searchWrapper .searchLine{
-    align-content: center;
+
+.searchWrapper{
+    width:300px;
+    margin: 0 auto;
 }
-#ingredientList{
+.searchTitle{
+    font-family: Abel,sans-serif;
+    padding: 0 auto;
+    font-weight: bold;
+    font-size: 40px;
+}
+.searchWrapper button{
+    margin-left: 15px;
+    background-color: transparent;
+    border: none;
+}
+
+.searchWrapper ul{
     list-style: none;
-    text-decoration: none;
 }
+.searchItem{
+    width: 240px;
+    height:40px;
+}
+
+.removeBtn{
+    height:35px;
+    width: 35px;
+    background: url("http://localhost:63342/ChowSenseWebApp/images/ic_menu_remove.png")no-repeat;
+    vertical-align: -50%;
+}
+.removeBtn:hover{
+    background: url("http://localhost:63342/ChowSenseWebApp/images/ic_menu_remove_r.png")no-repeat;
+    border: none;
+}
+
+.addBtn{
+    height:35px;
+    width: 35px;
+    background: url("http://localhost:63342/ChowSenseWebApp/images/ic_menu_add.png")no-repeat;
+    vertical-align: -55%;
+    margin-bottom: 5px;
+}
+
+.addBtn:hover{
+    background: url("http://localhost:63342/ChowSenseWebApp/images/ic_menu_add_green.png")no-repeat;
+    border: none;
+}
+
+.addBtn:active, .addBtn:focus, .removeBtn:active, .removeBtn:focus{
+    border: none;
+    outline: none;
+}
+
+.searchWrapper input[type="text"]{
+    font-family:  Ubuntu,sans-serif;
+    font-size: larger;
+    width: 180px;
+}
+/****************************************/
+
+/**************RECIPE LIST***************/
+.list-container{
+    padding:0 10%;
+}
+
+.recipe-list-item{
+    border:1px solid darkgray;
+    border-radius: 5px;
+    padding:10%;
+    margin:5%;
+    text-align: center;
+    font-family:  Ubuntu,sans-serif;
+    background-color: #FFFFFF;
+    height: 448px;
+
+    -webkit-box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
+    -moz-box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
+    box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
+}
+.recipe-list-item h3{
+    font-family: Abel,sans-serif;
+    font-weight: bold;
+}
+
+.recipe-list-item a{
+    font-family: Abel,sans-serif;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
 
 /****************************************/

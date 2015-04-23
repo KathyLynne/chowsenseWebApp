@@ -10,8 +10,7 @@ $(function() {
     $("#addTerm").click(function(){
 
     $('<li class="searchItem"><input type="text" name="searchTerm">' +
-    '<button class="btn btn-default removeBtn"> ' +
-    'remove </button> ' +
+    '<button class="removeBtn"></button> ' +
     '</li>').appendTo("#ingredientList").hide().fadeIn(700);
 
     });
