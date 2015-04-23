@@ -18,13 +18,13 @@ include 'includes/header.php';
 <script src="js/search.js"></script>
 <!--Main Body-->
 <div id="mainWrapper" class="container-fluid">
+    <h1 class="searchTitle text-center">What's in the cupboards?</h1>
     <div class="callOut">
             <div class="searchWrapper">
             <!--<form method='post' >-->
-                <h3>What's in the cupboards?</h3>
                 <div class="searchLine" id="termOriginal">
                     <ul id="ingredientList">
-                        <li> <input type='text' name='searchTerm'><button id="addTerm" class="btn btn-default"><img src="images/ic_menu_add.png"> </button></li>
+                        <li> <input type='text' name='searchTerm'><button id="addTerm" class="addBtn"></button></li>
                     </ul>
                 </div>
             </div>

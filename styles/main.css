@@ -48,7 +48,7 @@ p{
 /***********GENERAL FORMATTING*************/
 
 body{
-    background-color: #4AAE4C;
+    background-color: #E9EAED;
 }
 
 #body{
@@ -72,7 +72,7 @@ html{
     padding-top: 20px;
     background-color: #4AAE4C;
     border-top: 1px solid #0B811E;
-    font-family:  Ubuntu,sans-serif;;
+    font-family:  Ubuntu,sans-serif;
     padding-bottom: 20px;
     position: absolute;
     bottom: 0;
@@ -139,41 +139,58 @@ html{
     width:300px;
     margin: 0 auto;
 }
+.searchTitle{
+    font-family: Abel,sans-serif;
+    padding: 0 auto;
+    font-weight: bold;
+    font-size: 40px;
+}
 .searchWrapper button{
+    margin-left: 15px;
     background-color: transparent;
     border: none;
-    margin-left: 15px;
-    border-radius: 80px;
-}
-.searchWrapper h3 {
-    padding: 0 auto;
 }
 
 .searchWrapper ul{
     list-style: none;
 }
-
-.removeBtn:hover{
-    background-color: transparent;
-    border: none;
-
+.searchItem{
+    width: 240px;
+    height:40px;
 }
 
-.removeBtn {
-    height:30px;
-    width: 50px;
-    padding: auto;
-}
 .removeBtn{
     height:35px;
     width: 35px;
-    margin:auto;
-    background-size: 10px 10px;
     background: url("http://localhost:63342/ChowSenseWebApp/images/ic_menu_remove.png")no-repeat;
-
+    vertical-align: -50%;
 }
 .removeBtn:hover{
-    background: url("http://localhost:63342/ChowSenseWebApp/images/ic_menu_remove_red.png")no-repeat;
+    background: url("http://localhost:63342/ChowSenseWebApp/images/ic_menu_remove_r.png")no-repeat;
+    border: none;
 }
 
+.addBtn{
+    height:35px;
+    width: 35px;
+    background: url("http://localhost:63342/ChowSenseWebApp/images/ic_menu_add.png")no-repeat;
+    vertical-align: -55%;
+    margin-bottom: 5px;
+}
+
+.addBtn:hover{
+    background: url("http://localhost:63342/ChowSenseWebApp/images/ic_menu_add_green.png")no-repeat;
+    border: none;
+}
+
+.addBtn:active, .addBtn:focus, .removeBtn:active, .removeBtn:focus{
+    border: none;
+    outline: none;
+}
+
+.searchWrapper input[type="text"]{
+    font-family:  Ubuntu,sans-serif;
+    font-size: larger;
+    width: 180px;
+}
 /****************************************/
