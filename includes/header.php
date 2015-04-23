@@ -58,7 +58,7 @@
                 'Search' =>'/ChowSenseWebApp/search.php',
                 'My Recipes' =>'#',
                 'My Favorites' =>'#',
-                'Browse' =>'#'
+                'Browse' =>'/ChowSenseWebApp/browse.php'
             );
             $this_page = $_SERVER['REQUEST_URI'];
             foreach ($pages as $k=>$v){

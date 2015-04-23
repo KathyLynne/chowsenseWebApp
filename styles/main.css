@@ -52,7 +52,7 @@ body{
 }
 
 #body{
-    padding-bottom: 230px;
+    padding-bottom: 250px;
 }
 html{
     min-height:100%;
@@ -127,7 +127,7 @@ html{
         display: block;
     }
     #body{
-        padding-bottom: 400px;
+        padding-bottom: 420px;
     }
 }
 
@@ -193,4 +193,37 @@ html{
     font-size: larger;
     width: 180px;
 }
+/****************************************/
+
+/**************RECIPE LIST***************/
+.list-container{
+    padding:0 10%;
+}
+
+.recipe-list-item{
+    border:1px solid darkgray;
+    border-radius: 5px;
+    padding:10%;
+    margin:5%;
+    text-align: center;
+    font-family:  Ubuntu,sans-serif;
+    background-color: #FFFFFF;
+    height: 448px;
+
+    -webkit-box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
+    -moz-box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
+    box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
+}
+.recipe-list-item h3{
+    font-family: Abel,sans-serif;
+    font-weight: bold;
+}
+
+.recipe-list-item a{
+    font-family: Abel,sans-serif;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+
 /****************************************/
