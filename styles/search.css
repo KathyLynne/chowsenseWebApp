@@ -1,3 +1,7 @@
 .searchWrapper .searchLine{
     align-content: center;
 }
+#ingredientsList{
+    list-style: none;
+    text-decoration: none;
+}

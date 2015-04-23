@@ -132,3 +132,14 @@ html{
 }
 
 /****************************************/
+
+/************SEARCH   *******************/
+.searchWrapper .searchLine{
+    align-content: center;
+}
+#ingredientList{
+    list-style: none;
+    text-decoration: none;
+}
+
+/****************************************/
