@@ -42,6 +42,28 @@ p{
     color: #37771d;
 }
 
+.logoutButton{
+    color: #777;
+    line-height: 20px;
+    position: relative;
+    display: block;
+    padding: 15px;
+    font-size: 180%;
+    font-family: Abel,sans-serif;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: auto;
+    text-align: -webkit-match-parent;
+    border:none;
+}
+.logoutButton:hover{
+    color: #000;
+}
+
+.logoutButton:active, .logoutButton:focus, .logoutButton:active, .logoutButton:focus{
+    border: none;
+    outline: none;
+}
 /*****************************************/
 
 

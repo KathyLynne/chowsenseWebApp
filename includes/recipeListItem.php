@@ -17,7 +17,7 @@ echo "<div class='col-md-4 col-xs-12'>
 
                     <h3>$recipeName</h3>
                     <p>$recipeDescription</p>
-                    <a href='#' class='btn btn-success btn-large'>View Details</a>
+                    <a href='recipe.php?id=$recipeID' class='btn btn-success btn-large'>View Details</a>
                 </div>
        </div>";
 

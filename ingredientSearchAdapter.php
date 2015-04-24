@@ -51,7 +51,7 @@ if(isset($_POST["ingredients"])) {
                                 <img class='img-responsive' src='$photoURL'>
                                 <h3>$recipeName</h3>
                                 <p>$recipeDescription</p>
-                                <a href='#' class='btn btn-success btn-large'>View Details</a>
+                                <a href='recipe.php?id=$recipeID' class='btn btn-success btn-large'>View Details</a>
                             </div>
                          </div>";
 
