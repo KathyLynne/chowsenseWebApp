@@ -18,41 +18,20 @@ include 'includes/header.php';
 <script src="js/search.js"></script>
 <!--Main Body-->
 <div id="mainWrapper" class="container-fluid">
-    <h1 class="searchTitle text-center">What's in the cupboards?</h1>
+    <h1 class="searchTitle text-center" id="searchPrompt">What's in the cupboards?</h1>
+     <h1 class="searchTitle text-center" id="searchResultsPrompt">Here are some ideas we found!</h1>
+
     <div class="callOut">
             <div class="searchWrapper">
-
-
-
 
                 <div class="searchLine" id="termOriginal">
                     <ul id="ingredientList">
                         <li> <input type='text' name='searchTerm'><button id="addTerm" class="btn btn-default"><img src="images/ic_menu_add.png"> </button></li>
                     </ul>
+
                 </div>
+                <button id="searchButton"  class="btn btn-success btn-large">Search</button>
 
-
-                    <button id="searchButton"  class="btn btn-default">Search</button>
-                <?php
-
-                if(isset($_POST["ingredients"])){
-                    $ingredients = $_POST["ingredients"];
-                    echo   "<p>$ingredients</p>";
-                }
-                ?>
-                <div class="list-container">
-                    <div class="row">
-                <?php
-/*
-                for ($i = 0; $i < count($results); $i++) {
-                $recipe = $results[$i];
-                $recipeID = $recipe->getObjectId();
-                include 'includes/recipeListItem.php';
-                }
-
-                */?>
-                    </div>
-                </div>
 
             </div>
 

@@ -150,6 +150,11 @@ html{
     background-color: transparent;
     border: none;
 }
+/*
+.searchWrapper button:hover{
+    background-color: lightgreen;
+}
+*/
 
 .searchWrapper ul{
     list-style: none;
@@ -157,6 +162,14 @@ html{
 .searchItem{
     width: 240px;
     height:40px;
+}
+#searchButton{
+    background-color:#62c462;
+    vertical-align: middle;
+
+}
+#searchButton:hover{
+    background-color:#51a351 ;
 }
 
 .removeBtn{
@@ -227,3 +240,33 @@ html{
 
 
 /****************************************/
+
+/**************error**************/
+
+.sleeping-cooks{
+    border:1px solid darkgray;
+    border-radius: 5px;
+    padding:5%;
+    margin:5%;
+    text-align: center;
+    font-family:  Ubuntu,sans-serif;
+    background-color: #FFFFFF;
+    height: 448px;
+
+    -webkit-box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
+    -moz-box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
+    box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
+}
+.sleeping-cooks h3{
+    font-family: Abel,sans-serif;
+    font-weight: bold;
+}
+
+.sleeping-cooks a{
+    font-family: Abel,sans-serif;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.sleeping-cooks img{
+    vertical-align: middle;
+}

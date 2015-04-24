@@ -1,3 +1,17 @@
+<?php
+session_start();
+require 'vendor/autoload.php';
+
+use Parse\ParseClient;
+ParseClient::initialize('qJwvg8qtJEb7FnzU1ygRwgdUkGp7Bgh2oV8m2yWP', 'RY4q4pxlAZGLr1OX6INOEo5f9vKCJExvsEzVxzIg', 'nf096iEf4IJQX6uYVTjPZ5ybis51RkSzE45SfJjr');
+
+/*$storage = new \Parse\ParseSessionStorage();
+ParseClient::setStorage($storage);
+$user = \Parse\ParseUser::getCurrentUser();
+//var_dump($_SERVER['REQUEST_URI']);
+if($user = null && ($_SERVER['REQUEST_URI'] == '/ChowSenseWebApp/account.php'))*/
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
