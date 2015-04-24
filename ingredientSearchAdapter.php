@@ -23,13 +23,14 @@ if(isset($_POST["ingredients"])) {
     echo "<div class='list-container'>
                     <div class='row'>";
     if(count($results) == 0){
-        echo "<div class='col-md-4 col-xs-12'>
+        echo "
+            <div class='col-md-push-3 col-md-6 col-xs-12'>
                <div class='sleeping-cooks'>
                  <img class='img-responsive' src='images/sleepingChef.jpg'>
                  <h3>Oh no! The cooks are asleep! We couldn't find anything for you..</h3>
                  <a href='search.php' class='btn btn-success btn-large'>Try Again</a>
                </div>
-               </div>
+            </div>
                  ";
     }else {
         for ($i = 0; $i < count($results); $i++) {

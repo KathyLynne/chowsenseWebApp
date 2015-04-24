@@ -165,8 +165,11 @@ html{
 }
 #searchButton{
     background-color:#62c462;
-    vertical-align: middle;
-
+    margin-left:90px;
+    font-family: Abel,sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid #398439;
 }
 #searchButton:hover{
     background-color:#51a351 ;
@@ -241,6 +244,38 @@ html{
 
 /****************************************/
 
+/************RECIPE DETAILS**************/
+
+.recipe-details{
+    border:1px solid darkgray;
+    border-radius: 5px;
+    padding:2% 5% 2% 5%;
+    text-align: left;
+    font-family:  Ubuntu,sans-serif;
+    background-color: #FFFFFF;
+
+    -webkit-box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
+    -moz-box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
+    box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
+}
+
+.details-title{
+    text-align: center;
+    font-family: Abel,sans-serif;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.step-head{
+    font-family: Abel,sans-serif;
+}
+
+.details-img{
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin-bottom: 3%;
+}
+/****************************************/
 /**************error**************/
 
 .sleeping-cooks{
@@ -268,5 +303,5 @@ html{
     font-size: 20px;
 }
 .sleeping-cooks img{
-    vertical-align: middle;
+    margin: 0 auto;
 }
