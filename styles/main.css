@@ -246,7 +246,7 @@ html{
     text-align: center;
     font-family:  Ubuntu,sans-serif;
     background-color: #FFFFFF;
-    height: 448px;
+    min-height: 448px;
 
     -webkit-box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
     -moz-box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
@@ -257,12 +257,19 @@ html{
     font-weight: bold;
 }
 
-.recipe-list-item a{
-    font-family: Abel,sans-serif;
-    margin-top: 20px;
-    font-size: 20px;
+.recipe-list-item img{
+    border-radius: 5px;
 }
 
+
+.recipe-list-item a{
+    font-family: Abel,sans-serif;
+    font-size: 20px;
+    position: absolute;
+    bottom: 50px;
+    right: 30%;
+    left: 28%;
+}
 
 /****************************************/
 
@@ -298,6 +305,7 @@ html{
     margin-bottom: 3%;
 }
 /****************************************/
+
 /**************error**************/
 
 .sleeping-cooks{

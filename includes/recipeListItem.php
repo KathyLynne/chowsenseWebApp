@@ -4,6 +4,15 @@ try{
     $recipe = $query->get($recipeID);
     $recipeName = $recipe->get("RecipeTitle");
     $recipeDescription = $recipe->get("RecipeDescription");
+
+    $max_length = 180;
+
+    if (strlen($recipeDescription) > $max_length)
+    {
+        $offset = ($max_length - 3) - strlen($recipeDescription);
+        $recipeDescription = substr($recipeDescription, 0, strrpos($recipeDescription, ' ', $offset)) . '...';
+    }
+
     $photo = $recipe->get("RecipePhoto");
     if(!empty($photo)){
         $photoURL = $photo->getURL();

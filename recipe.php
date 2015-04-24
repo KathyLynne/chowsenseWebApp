@@ -37,8 +37,34 @@ if(isset($_GET['id'])) {
                 <div class='recipe-details col-xs-12'>
                     <div class='row'>
                         <h1 class='details-title'>$recipeName</h1>
-                        <h4 class='details-title'>$recipeDescription</h4>
-                        <hr>
+                        <h4 class='details-title'>$recipeDescription</h4>";
+
+        if($currentUser){
+            $UserID=$currentUser->getObjectId();
+
+            $query = new \Parse\ParseQuery('Favorites');
+            $query->equalTo("UserId", $UserID);
+            $results = $query->first();
+
+            $favorites = $results->get("RecipeId");
+            $inFavorites = false;
+            foreach($favorites as $id){
+                if($id==$recipeID){
+                    $inFavorites = true;
+                }
+            }
+
+            if($inFavorites){
+                $details .= "<h3>Favorite!</h3>";
+            }else{
+                $details .= "<h3>Not in Favorites!</h3>";
+            }
+        } else {
+            $details .= "<h3>Login!</h3>";
+        }
+
+
+            $details .="    <hr>
                         <div class='col-md-6'>
                             <img class='img-responsive details-img' src='$photoURL'>
                             ";
