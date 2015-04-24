@@ -16,21 +16,33 @@ ParseClient::initialize('qJwvg8qtJEb7FnzU1ygRwgdUkGp7Bgh2oV8m2yWP', 'RY4q4pxlAZG
 <div id="mainWrapper" class="container-fluid">
 
 <?php
-//use Parse\ParseUser;
+use Parse\ParseUser;
 
-//$currentUser = ParseUser::getCurrentUser();
 
-//if($currentUser){
-/*
+if($currentUser){
+
+    $username=$currentUser->getUsername();
+    echo "<h3>Hello $username</h3>";
+
 } else {
-    //echo 'no user';
+
     echo '<form method="post">
             <h3>Please Login</h3>
-            <input type="text" id="userName" placeholder="Enter User Name">
-            <input type="password" id="password" placeholder="Password">
-            <button type="submit" id="loginButton" class="btn btn-success btn-large">Login</button>
+            <input type="text" name="userName" placeholder="Enter User Name">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit" name="loginButton" class="btn btn-success btn-large">Login</button>
           </form>';
-}*/
+    if(isset($_POST['loginButton'])){
+        if(!empty($_POST['userName']) && !empty($_POST['password'])){
+            try{
+                $currentUser = ParseUser::logIn($_POST['userName'], $_POST['password']);
+                header('Location: '.$_SERVER['REQUEST_URI']);
+            }catch(ParseException $error){
+                echo "$error";
+            }
+        }
+   }
+}
 
 ?>
 

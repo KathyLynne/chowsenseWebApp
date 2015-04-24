@@ -1,15 +1,15 @@
 <?php
-session_start();
-require 'vendor/autoload.php';
 
+require 'vendor/autoload.php';
+session_start();
 use Parse\ParseClient;
 ParseClient::initialize('qJwvg8qtJEb7FnzU1ygRwgdUkGp7Bgh2oV8m2yWP', 'RY4q4pxlAZGLr1OX6INOEo5f9vKCJExvsEzVxzIg', 'nf096iEf4IJQX6uYVTjPZ5ybis51RkSzE45SfJjr');
 
-/*$storage = new \Parse\ParseSessionStorage();
+$storage = new \Parse\ParseSessionStorage();
 ParseClient::setStorage($storage);
-$user = \Parse\ParseUser::getCurrentUser();
+//$user = \Parse\ParseUser::getCurrentUser();
 //var_dump($_SERVER['REQUEST_URI']);
-if($user = null && ($_SERVER['REQUEST_URI'] == '/ChowSenseWebApp/account.php'))*/
+//if($user = null && ($_SERVER['REQUEST_URI'] == '/ChowSenseWebApp/account.php'))
 ?>
 
 <!DOCTYPE html>
@@ -87,9 +87,23 @@ if($user = null && ($_SERVER['REQUEST_URI'] == '/ChowSenseWebApp/account.php'))*
 <!--            <li><a href="#">Browse</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Account</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="account.php">Account</a></li>
+            <li><form method="post"><button name="logOutButton" class="logoutButton" type="submit">Logout</button></form></li>
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
 <div id="body">
+
+<?php
+$currentUser = \Parse\ParseUser::getCurrentUser();
+if(isset($_POST['logOutButton'])) {
+    if ($currentUser) {
+        $currentUser->logOut();
+        $_SESSION = array();
+        session_destroy();
+        $username = $currentUser->getUsername();
+        echo '<script type="text/javascript">location.reload(true); alert("You Have Been Logged Out!");</script>';
+
+    }
+}
+?>
