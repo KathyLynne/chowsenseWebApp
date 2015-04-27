@@ -3,6 +3,7 @@
 require 'vendor/autoload.php';
 session_start();
 use Parse\ParseClient;
+use Parse\ParseUser;
 ParseClient::initialize('qJwvg8qtJEb7FnzU1ygRwgdUkGp7Bgh2oV8m2yWP', 'RY4q4pxlAZGLr1OX6INOEo5f9vKCJExvsEzVxzIg', 'nf096iEf4IJQX6uYVTjPZ5ybis51RkSzE45SfJjr');
 
 $storage = new \Parse\ParseSessionStorage();
@@ -20,9 +21,6 @@ ParseClient::setStorage($storage);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="ChowSenseTeam Brody Smith Kate Johnson">
-
-
-
 
     <title>Chowsense</title>
     <!--Bootstrap-->
@@ -87,23 +85,54 @@ ParseClient::setStorage($storage);
 <!--            <li><a href="#">Browse</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="account.php">Account</a></li>
-            <li><form method="post"><button name="logOutButton" class="logoutButton" type="submit">Logout</button></form></li>
+            <?php
+            $currentUser = \Parse\ParseUser::getCurrentUser();
+            if($currentUser) {
+                echo '<li><a href="account.php">Account</a></li>
+                <li><form method="post"><button name="logOutButton" class="logoutButton" type="submit">Logout</button></form></li>';
+            }else {
+                echo '<form method="post">
+                      <div class="form-group navbar-form">
+                        <input type="text" name="userName" placeholder="Enter User Name" class="form-control">
+                        <input type="password" name="password" placeholder="Password" class="form-control">
+
+                        <button type="submit" name="loginButtonNav" class="btn btn-success btn-large">Login</button>
+                        <!--<button type="submit" name="registerButtonNav" class="btn btn-success btn-large">Register</button>-->
+
+                      </div>
+                      </form>
+                      <form action=" /ChowSenseWebApp/account.php" method="post">
+                      <button type="submit" name="register" class="btn btn-success btn-large">Register</button>
+                        </form>';
+            }
+            if(isset($_POST['logOutButton'])) {
+                if ($currentUser) {
+                    $currentUser->logOut();
+                    $_SESSION = array();
+                    session_destroy();
+                    $username = $currentUser->getUsername();
+                    echo '<script type="text/javascript">location.reload(true); alert("You Have Been Logged Out!");</script>';
+
+                }
+            }else if(isset($_POST['loginButtonNav'])) {
+                if (!empty($_POST['userName']) && !empty($_POST['password'])) {
+                    try {
+                        $currentUser = ParseUser::logIn($_POST['userName'], $_POST['password']);
+                        header('Location: ' . $_SERVER['REQUEST_URI']);
+                    } catch (ParseException $error) {
+                        echo "$error";
+                    }
+                }
+            }else if(isset($_POST['registerButtonNav'])){
+                header( 'Location: /ChowSenseWebApp/account.php' );
+                echo "<script type='text/javascript'>
+                          $(function() {
+                            $('#register').click();
+                                });
+                      </script>";
+            }
+            ?>
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
 <div id="body">
-
-<?php
-$currentUser = \Parse\ParseUser::getCurrentUser();
-if(isset($_POST['logOutButton'])) {
-    if ($currentUser) {
-        $currentUser->logOut();
-        $_SESSION = array();
-        session_destroy();
-        $username = $currentUser->getUsername();
-        echo '<script type="text/javascript">location.reload(true); alert("You Have Been Logged Out!");</script>';
-
-    }
-}
-?>

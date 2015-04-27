@@ -24,12 +24,14 @@ if($currentUser){
     $username=$currentUser->getUsername();
     echo "<h3>Hello $username</h3>";
 
+
 } else {
     if(isset($_POST['loginButton'])){
         if(!empty($_POST['userName']) && !empty($_POST['password'])){
             try{
                 $currentUser = ParseUser::logIn($_POST['userName'], $_POST['password']);
                 header('Location: '.$_SERVER['REQUEST_URI']);
+
             }catch(ParseException $error){
                 echo "$error";
             }
@@ -37,12 +39,13 @@ if($currentUser){
    }elseif(isset($_POST['register'])){
         echo '<div class="col-md-10">
             <div class="row">
-            <form method="post" id="registrationForm">
+            <form method="post" id="registrationForm" data-toggle="validate">
             <h3>Registration</h3>
              <h5>We don\'t need much, and won\'t send you many emails (don\'t worry, we don\'t like it either)</h5>
                 <div class="form-group">
                     <label for="userNameR">User Name</label>
-                    <input type="text" name="userNameR" placeholder="Enter User Name" class="form-control">
+                    <input type="text" name="userNameR" placeholder="Enter User Name" class="form-control" data-validation="length alphanumeric required" data-validation-length="3-12"
+		 data-validation-error-msg="Between 3-12 chars, only alphanumeric characters">
                 </div>
                 <div class="form-group">
                     <label for="emailR">Email</label>
@@ -50,11 +53,11 @@ if($currentUser){
                 </div>
                 <div class="form-group">
                     <label for="pass_confirmation">Password</label>
-                    <input type="password" placeholder="Password" name="pass_confirmation" data-validation-help="Must contain one capital letter and at least one number!" class="form-control">
+                    <input type="password" placeholder="Password" name="pass_confirmation" data-validation="length"  data-validation-length="min8" data-validation-help="Must contain one capital letter and at least one number!" class="form-control">
                 </div>
                 <div class="form-group">
                 <label for="pass">Confirm Password</label>
-                    <input type="password"name="pass" data-validation="confirmation" placeholder="Password" class="form-control" class="form-control">
+                    <input type="password"name="pass" data-validation="confirmation" placeholder="Password" data-validation-confirm="pass_confirmation" class="form-control">
                 </div>
                 <button type="submit" name="sendRegistration" class="btn btn-success btn-large">Let\'s Do This!</button>
             </div>
@@ -71,9 +74,6 @@ if($currentUser){
             $user->set("password", $uPassword);
             $user->set("email", $uEmail);
 
-    // other fields can be set just like with ParseObject
-            //$user->set("phone", "415-392-0202");
-
             try {
                 $user->signUp();
                 echo 'success';
@@ -81,8 +81,6 @@ if($currentUser){
                 // Show the error message somewhere and let the user try again.
                 echo "Error: " . $ex->getCode() . " " . $ex->getMessage();
             }
-
-
     }else{
         echo '<form method="post">
             <h3>Please Login</h3>
@@ -107,14 +105,12 @@ if($currentUser){
 ?>
 
 </div>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js"></script>
     <script>
         $.validate({
-            form : '#registrationForm'
+            //  form : '#registrationForm'
             modules: 'security'
-            validateOnBlur : true, // disable validation when input looses focus
-            errorMessagePosition : 'element' // Instead of 'element' which is default
-            scrollToTopOnError : false // Set this property to true if you have a long form
         });
     </script>
 <?php
