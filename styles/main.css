@@ -21,11 +21,11 @@ p{
     font-family: Abel,sans-serif;
 }
 .nav-title img {
-    max-width:43px;
-    margin-left: 10px;
+    max-width:40px;
+    margin-left: 5px;
     margin-top: 4px;
+    float:left;
 }
-
 .nav-title p {
     float: right;
     margin-right: 2em;
