@@ -10,6 +10,13 @@ include 'includes/header.php';
 
 
 if($currentUser){
+
+echo '    <div class="list-container">
+            <div class="row">
+                <a class="col-md-12 col-md-push-0 col-xs-10 col-xs-push-1 btn-success btn"><div class="add-recipe"><h1>Add a Recipe!</h1><img class="img-responsive" src="images/plus.png" alt="add"/></div></a>
+            </div>
+          </div>';
+
 $UserName=$currentUser->getUsername();
 $query = new \Parse\ParseQuery('Recipe');
 $query->equalTo("UserId", $UserName);
@@ -40,7 +47,7 @@ if(!empty($results)){
                    <div class='sleeping-cooks'>
                      <img class='img-responsive' src='images/sleepingChef.jpg'>
                      <h3>Oh no! The cooks are asleep! We couldn't find anything..<br><br>Have you added any recipes?</h3>
-                     <a href='#' class='btn-add-recipe btn btn-success btn-large'>Add a Recipe! <img src='images/ic_menu_add.png' alt='add'/></a>
+                     <a href='#' class='btn-add-recipe btn btn-success btn-large'>Add a Recipe!<img src='images/ic_menu_add.png' alt='add'/></a>
                    </div>
                 </div>
 <div class='list-container'>

@@ -151,7 +151,9 @@ html{
     #body{
         padding-bottom: 420px;
     }
+
 }
+
 
 /****************************************/
 
@@ -278,6 +280,16 @@ html{
     padding-left: 3px;
 }
 
+.add-recipe h1{
+    position: relative;
+    float: left;
+    font-family: Abel,sans-serif;
+}
+.add-recipe img {
+    height: 60px;
+    float: right;
+    padding-top:10px;
+}
 /****************************************/
 
 

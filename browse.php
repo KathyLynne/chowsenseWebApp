@@ -10,7 +10,6 @@ include 'includes/header.php';
 $query = new \Parse\ParseQuery("Recipe");
 $query->descending("createdAt");
 $results = $query->find();
-echo "There are " . count($results) . " recipes.";
 
 
 ?><!--Main Body-->
