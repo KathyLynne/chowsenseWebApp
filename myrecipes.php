@@ -13,7 +13,7 @@ if($currentUser){
 
 echo '    <div class="list-container">
             <div class="row">
-                <a class="col-md-12 col-md-push-0 col-xs-10 col-xs-push-1 btn-success btn"><div class="add-recipe"><h1>Add a Recipe!</h1><img class="img-responsive" src="images/plus.png" alt="add"/></div></a>
+                <a class="col-md-12 col-md-push-0 col-xs-10 col-xs-push-1 btn-success btn"><div class="add-recipe"><h2>Add a Recipe!</h2><img class="img-responsive" src="images/plus.png" alt="add"/></div></a>
             </div>
           </div>';
 
