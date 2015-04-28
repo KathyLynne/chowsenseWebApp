@@ -42,33 +42,83 @@ if(isset($_GET['id'])) {
         if($currentUser){
             $UserID=$currentUser->getObjectId();
 
+            try {
+                if (isset($_POST['unFavorite'])) {
+                    $query = new \Parse\ParseQuery('Favorites');
+                    $query->equalTo("UserId", $UserID);
+                    $results = $query->first();
+
+                    if (!empty($results)) {
+                        $favorites = $results->get("RecipeId");
+                        for ($x = 0; $x <= sizeof($favorites); $x++) {
+                            if ($favorites[$x] == $recipeID) {
+                                unset($favorites[$x]);
+                            }
+                        }
+                        $results->setArray("RecipeId", $favorites);
+                        $results->save();
+                        header('Location: '.$_SERVER['REQUEST_URI']);
+                    }
+
+                }
+
+                if (isset($_POST['favorite'])) {
+                    $query = new \Parse\ParseQuery('Favorites');
+                    $query->equalTo("UserId", $UserID);
+                    $results = $query->first();
+
+
+                    if (!empty($results)) {
+                        $favorites = $results->get("RecipeId");
+                        $inFavorites = false;
+                        foreach($favorites as $id){
+                            if($id==$recipeID){
+                                $inFavorites = true;
+                            }
+                        }
+                        if(!$inFavorites){
+                            $x = sizeof($favorites);
+                            array_push($favorites, $recipeID);
+                            $results->setArray("RecipeId", $favorites);
+                            $results->save();
+                            header('Location: '.$_SERVER['REQUEST_URI']);
+                        }
+                    }
+                }
+            }catch (\Parse\ParseException $ex){
+
+            }
+
             $query = new \Parse\ParseQuery('Favorites');
             $query->equalTo("UserId", $UserID);
             $results = $query->first();
 
-            $favorites = $results->get("RecipeId");
-            $inFavorites = false;
-            foreach($favorites as $id){
-                if($id==$recipeID){
-                    $inFavorites = true;
-                }
+            if(!empty($results)){
+                $favorites = $results->get("RecipeId");
+                $inFavorites = false;
+                    foreach($favorites as $id){
+                        if($id==$recipeID){
+                            $inFavorites = true;
+                        }
+                    }
+
+                    if($inFavorites){
+                        $details .= "<form method='post' id='removeFavorite'><button class='fav-btn btn btn-default' type='submit' name='unFavorite'><img src='images/favorite_true.png' alt='notFavorite'/> &CenterDot; Remove From Favourites</button></form>";
+                    }else{
+                        $details .= "<form method='post' id='addFavorite'><button  class='fav-btn btn btn-default' type='submit' name='favorite'><img src='images/favorite_false.png' alt='favorite'/> &CenterDot; Add to Favourites</button></form>";
+                    }
+            }else{
+                $details .= "<h3>Error Loading favourites!</h3>";
             }
 
-            if($inFavorites){
-                $details .= "<h3>Favorite!</h3>";
-            }else{
-                $details .= "<h3>Not in Favorites!</h3>";
-            }
         } else {
             $details .= "<h3>Login!</h3>";
         }
-
 
             $details .="    <hr>
                         <div class='col-md-6'>
                             <img class='img-responsive details-img' src='$photoURL'>
                             ";
-
 
         $details .= "        </div>
                     <div class='col-md-6'>";

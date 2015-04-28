@@ -270,8 +270,16 @@ html{
     right: 30%;
     left: 28%;
 }
+.btn-add-recipe{
+    padding: 8px 15px 5px 25px;
+}
+.btn-add-recipe img{
+    padding-bottom: 2px;
+    padding-left: 3px;
+}
 
 /****************************************/
+
 
 /************RECIPE DETAILS**************/
 
@@ -304,6 +312,10 @@ html{
     border: 1px solid gray;
     margin-bottom: 3%;
 }
+
+.fav-btn{
+    padding-top: 10px;
+}
 /****************************************/
 
 /**************error**************/
@@ -316,7 +328,7 @@ html{
     text-align: center;
     font-family:  Ubuntu,sans-serif;
     background-color: #FFFFFF;
-    height: 448px;
+    min-height: 448px;
 
     -webkit-box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);
     -moz-box-shadow: 6px 8px 19px 0px rgba(166,166,166,1);

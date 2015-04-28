@@ -68,8 +68,8 @@ ParseClient::setStorage($storage);
             <?php
             $pages = array(
                 'Search' =>'/ChowSenseWebApp/search.php',
-                'My Recipes' =>'#',
-                'My Favorites' =>'#',
+                'My Recipes' =>'/ChowSenseWebApp/myrecipes.php',
+                'My Favorites' =>'/ChowSenseWebApp/favourites.php',
                 'Browse' =>'/ChowSenseWebApp/browse.php'
             );
             $this_page = $_SERVER['REQUEST_URI'];
