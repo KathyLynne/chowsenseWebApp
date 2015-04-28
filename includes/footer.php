@@ -44,7 +44,7 @@
             <div class="col-xs-8 col-md-2">
                 <p><strong>Chowsense Inc.</strong><br>
                     506-555-5555<br>
-                    something@chowsense.com<br><br>
+                    chowsenseApp@gmail.com<br><br>
                     4 Flanders Crt.<br>
                     Moncton, NB <br>
                     E1C 0K6 Canada</p>

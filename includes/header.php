@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 session_start();
 use Parse\ParseClient;
 use Parse\ParseUser;
+use Parse\ParseException;
 ParseClient::initialize('qJwvg8qtJEb7FnzU1ygRwgdUkGp7Bgh2oV8m2yWP', 'RY4q4pxlAZGLr1OX6INOEo5f9vKCJExvsEzVxzIg', 'nf096iEf4IJQX6uYVTjPZ5ybis51RkSzE45SfJjr');
 
 $storage = new \Parse\ParseSessionStorage();
@@ -85,53 +86,88 @@ ParseClient::setStorage($storage);
 <!--            <li><a href="#">Browse</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                <?php
+                $currentUser = \Parse\ParseUser::getCurrentUser();
+                if($currentUser){
+                    echo 'Hello '. $currentUser->getUsername();
+                }
+                else{
+                    echo 'Welcome, Guest!';
+                }
+                ?>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+
             <?php
             $currentUser = \Parse\ParseUser::getCurrentUser();
+
             if($currentUser) {
-                echo '<li><a href="account.php">Account</a></li>
+                echo '<li><a href="account.php">Manage Account</a></li>
                 <li><form method="post"><button name="logOutButton" class="logoutButton" type="submit">Logout</button></form></li>';
             }else {
-                echo '<form method="post">
-                      <div class="form-group navbar-form">
-                        <input type="text" name="userName" placeholder="Enter User Name" class="form-control">
-                        <input type="password" name="password" placeholder="Password" class="form-control">
-
-                        <button type="submit" name="loginButtonNav" class="btn btn-success btn-large">Login</button>
+                echo '<div class="form-group navbar-form">
+                        <form method="post">
+                            <li><input type="text" name="userNameNav" placeholder="Enter User Name" class="form-control"></li>
+                            <li><input type="password" name="passwordNav" placeholder="Password" class="form-control"></li>
+                            <li><button type="submit" name="loginButtonNav" class="btn btn-success btn-large">Login</button></li>
                         <!--<button type="submit" name="registerButtonNav" class="btn btn-success btn-large">Register</button>-->
-
-                      </div>
-                      </form>
-                      <form action=" /ChowSenseWebApp/account.php" method="post">
-                      <button type="submit" name="register" class="btn btn-success btn-large">Register</button>
-                        </form>';
+                        </form>
+                            <li><form action=" /ChowSenseWebApp/account.php" method="post">
+                            <button type="submit" name="register" class="btn btn-success btn-large">Register</button>
+                        </form></li>
+                     </div>';
             }
-            if(isset($_POST['logOutButton'])) {
-                if ($currentUser) {
-                    $currentUser->logOut();
-                    $_SESSION = array();
-                    session_destroy();
-                    $username = $currentUser->getUsername();
-                    echo '<script type="text/javascript">location.reload(true); alert("You Have Been Logged Out!");</script>';
+            //if($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if (isset($_POST['logOutButton'])) {
+                    if ($currentUser) {
+                        $currentUser->logOut();
+                        $_SESSION = array();
+                        session_destroy();
+                        $username = $currentUser->getUsername();
+                        echo '<script type="text/javascript">location.reload(true); alert("You Have Been Logged Out!");</script>';
 
-                }
-            }else if(isset($_POST['loginButtonNav'])) {
-                if (!empty($_POST['userName']) && !empty($_POST['password'])) {
-                    try {
-                        $currentUser = ParseUser::logIn($_POST['userName'], $_POST['password']);
-                        header('Location: ' . $_SERVER['REQUEST_URI']);
-                    } catch (ParseException $error) {
-                        echo "$error";
                     }
-                }
-            }else if(isset($_POST['registerButtonNav'])){
-                header( 'Location: /ChowSenseWebApp/account.php' );
-                echo "<script type='text/javascript'>
+                } else if (isset($_POST['loginButtonNav'])) {
+                    if (!empty($_POST['userNameNav']) && !empty($_POST['passwordNav'])) {
+                        try {
+                            $currentUser = ParseUser::logIn($_POST['userNameNav'], $_POST['passwordNav']);
+                            header('Location: '.$_SERVER['REQUEST_URI']);
+                            //echo '<script type="text/javascript">location.reload(true); alert("Welcome");</script>';
+
+
+                        } catch (ParseException $error) {
+
+                            echo '<script type="text/javascript">window.location ="/ChowSenseWebApp/account.php"; alert("There was a problem logging you in, Please Try again");</script>';
+
+                        }
+                        /*if($currentUser){
+                            echo '<script type="text/javascript">location.reload(true); alert("Welcome");</script>';
+                        }else{
+                            echo '<script type="text/javascript">window.location ="/ChowSenseWebApp/account.php"; alert("There was a problem logging you in, Please Try again");</script>';
+                        }*/
+
+
+                    }else if(empty($_POST['userName']) || empty($_POST['password'])){
+
+                        echo '<script type="text/javascript"> alert("UserName and Password are required for Login");window.location ="/ChowSenseWebApp/account.php";</script>';
+                        //exit();
+                    }
+                } else if (isset($_POST['registerButtonNav'])) {
+                    header('Location: /ChowSenseWebApp/account.php');
+
+                    echo "<script type='text/javascript'>
                           $(function() {
                             $('#register').click();
                                 });
                       </script>";
+
+                //}
             }
             ?>
+            </ul>
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>

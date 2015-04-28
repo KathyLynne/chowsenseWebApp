@@ -17,23 +17,38 @@ ParseClient::initialize('qJwvg8qtJEb7FnzU1ygRwgdUkGp7Bgh2oV8m2yWP', 'RY4q4pxlAZG
 
 <?php
 use Parse\ParseUser;
-
-
+use Parse\ParseException;
+$currentUser = ParseUser::getCurrentUser();
 if($currentUser){
 
     $username=$currentUser->getUsername();
-    echo "<h3>Hello $username</h3>";
+    echo "<div class='row'>
+          <div class='col-md-6 col-md-push-3'>
+            <h3>Hello $username !</h3>
+            <p>How can we help you today?</p>
+            <form method='post'>
+            <div class='form-group'></div>
+            <label for='userNameChange'>Change UserName</label>
+            <input type='text' placeholder='nameChange' name='userNameChange' class='form-control'>
+            <button type='submit' class='btn btn-success'>Change Name!</button>
+            </div>
+            </form>
+            <p> </p>
+         </div>
+         </div>
+        ";
 
 
-} else {
-    if(isset($_POST['loginButton'])){
+} else if(isset($_POST['loginButton'])){
         if(!empty($_POST['userName']) && !empty($_POST['password'])){
             try{
                 $currentUser = ParseUser::logIn($_POST['userName'], $_POST['password']);
-                header('Location: '.$_SERVER['REQUEST_URI']);
+                //header('Location: '.$_SERVER['REQUEST_URI']);
+                echo '<script type="text/javascript">location.reload(true); alert("Welcome");</script>';
 
             }catch(ParseException $error){
-                echo "$error";
+                //echo "$error";
+                echo '<script type="text/javascript">location ="/ChowSenseWebApp/account.php"; alert("There was a problem logging you in, Please Try again");</script>';
             }
         }
    }elseif(isset($_POST['register'])){
@@ -92,6 +107,7 @@ if($currentUser){
             <label for="password">Password</label>
                 <input type="password" name="password" placeholder="Password" class="form-control">
                 <button type="submit" name="loginButton" class="btn btn-success btn-large">Login</button>
+                <a href="resetpassword.php">Forgot Your Password?</a>
             </div>
             <div class="form-group">
                 <h3>Don\'t have an account?</h3>
@@ -99,7 +115,7 @@ if($currentUser){
                 <button type="submit" name="register" class="btn btn-success btn-large">I want to make ChowSense!</button>
             </div>
           </form>';
-    }
+    //}
 }
 
 ?>
